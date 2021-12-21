@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [RequireComponent(typeof(AudioSource))]
 public class SimpleCollectibleScript : MonoBehaviour {
 
-	public enum CollectibleTypes {NoType, Type1, Type2, Type3, Type4, Type5}; // you can replace this with your own labels for the types of collectibles in your game!
+	public enum CollectibleTypes {Coin, Heart, Star, Type3, Type4, Type5}; // you can replace this with your own labels for the types of collectibles in your game!
 
 	public CollectibleTypes CollectibleType; // this gameObject's type
 
@@ -16,6 +17,8 @@ public class SimpleCollectibleScript : MonoBehaviour {
 	public AudioClip collectSound;
 
 	public GameObject collectEffect;
+
+	public EventSystemCustom eventSystem;
 
 	// Use this for initialization
 	void Start () {
@@ -32,7 +35,7 @@ public class SimpleCollectibleScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player") {
+		if (other.tag == "Ball") {
 			Collect ();
 		}
 	}
@@ -41,46 +44,46 @@ public class SimpleCollectibleScript : MonoBehaviour {
 	{
 		if(collectSound)
 			AudioSource.PlayClipAtPoint(collectSound, transform.position);
-		if(collectEffect)
-			Instantiate(collectEffect, transform.position, Quaternion.identity);
+        if (collectEffect)
+            Instantiate(collectEffect, transform.position, Quaternion.identity);
 
-		//Below is space to add in your code for what happens based on the collectible type
+        //Below is space to add in your code for what happens based on the collectible type
 
-		if (CollectibleType == CollectibleTypes.NoType) {
+        if (CollectibleType == CollectibleTypes.Coin) {
 
-			//Add in code here;
+            eventSystem.OnCoinIncrease.Invoke();
 
-			Debug.Log ("Do NoType Command");
+            Debug.Log ("Do Coin Command");
 		}
-		if (CollectibleType == CollectibleTypes.Type1) {
+		if (CollectibleType == CollectibleTypes.Heart) {
 
-			//Add in code here;
+            eventSystem.OnHeartIncrease.Invoke();
 
-			Debug.Log ("Do NoType Command");
+            Debug.Log ("Do Coin Command");
 		}
-		if (CollectibleType == CollectibleTypes.Type2) {
+		if (CollectibleType == CollectibleTypes.Star) {
 
 			//Add in code here;
-
-			Debug.Log ("Do NoType Command");
+			eventSystem.OnStarIncrease.Invoke();
+			Debug.Log ("Do Coin Command");
 		}
 		if (CollectibleType == CollectibleTypes.Type3) {
 
 			//Add in code here;
 
-			Debug.Log ("Do NoType Command");
+			Debug.Log ("Do Coin Command");
 		}
 		if (CollectibleType == CollectibleTypes.Type4) {
 
 			//Add in code here;
 
-			Debug.Log ("Do NoType Command");
+			Debug.Log ("Do Coin Command");
 		}
 		if (CollectibleType == CollectibleTypes.Type5) {
 
 			//Add in code here;
 
-			Debug.Log ("Do NoType Command");
+			Debug.Log ("Do Coin Command");
 		}
 
 		Destroy (gameObject);
