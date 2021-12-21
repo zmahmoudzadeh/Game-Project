@@ -10,6 +10,8 @@ public class GenerateLevel : MonoBehaviour
 	//public GameObject Street;
 	public int secNum;
 
+
+
 	void Update()
 	{
 		if (creatingSection == false)
@@ -23,6 +25,8 @@ public class GenerateLevel : MonoBehaviour
 	{
 		secNum = Random.Range(0, 4);
 		Instantiate(section[secNum], new Vector3(0, 0, zPos), Quaternion.identity);
+		
+
 		zPos += 40;
 		yield return new WaitForSeconds(2);
 		creatingSection = false;
