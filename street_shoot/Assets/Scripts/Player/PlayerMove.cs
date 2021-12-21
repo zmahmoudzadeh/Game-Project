@@ -25,6 +25,42 @@ public class PlayerMove : MonoBehaviour
                 transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed * -1);
             }
         }
+		if (Input.GetKey(KeyCode.Space))
+		{
+			this.transform.position += new Vector3(0, 10, 0);
+		}
     }
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		//if (collision.gameObject.CompareTag(TagNames.StickyPlatform.ToString()))
+		//{
+		//	Debug.LogWarning("sticky");
+		//	canJump = false;
+		//}
+
+		//if (collision.gameObject.CompareTag(TagNames.ExitDoor.ToString()))
+		//{
+		//	Debug.Log("exit door");
+		//}
+		Debug.Log("exit door");
+	}
+
+	private void OnTriggerEnter(Collider collision)
+	{
+		//if (collision.gameObject.CompareTag(TagNames.DeathZone.ToString()))
+		//{
+		//	Debug.Log("DEATH ZONE");
+		//	eventSystem.OnLooseCondition.Invoke();
+		//}
+
+		//if (collision.gameObject.CompareTag(TagNames.CollectableItem.ToString()))
+		//{
+		//	collision.gameObject.SetActive(false);
+		//	Debug.Log("POTION!");
+		//}
+		Debug.Log("exit door");
+
+	}
 }
 
