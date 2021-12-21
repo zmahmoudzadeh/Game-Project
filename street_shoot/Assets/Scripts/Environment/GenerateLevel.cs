@@ -23,7 +23,7 @@ public class GenerateLevel : MonoBehaviour
 
 	IEnumerator GenerateSection()
 	{
-		secNum = Random.Range(0, 4);
+		secNum = Random.Range(0, 10);
 		Instantiate(section[secNum], new Vector3(0, 0, zPos), Quaternion.identity);
 		
 
