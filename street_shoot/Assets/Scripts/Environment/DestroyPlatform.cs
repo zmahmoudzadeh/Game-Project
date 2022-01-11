@@ -15,7 +15,7 @@ public class DestroyPlatform : MonoBehaviour
     void Update()
     {
 		float camera_pos = camera.transform.position.z;
-		if (transform.position.z < camera_pos - 20)
+		if (transform.position.z < camera_pos - 10)
 		{
 			Destroy(gameObject);
 		}

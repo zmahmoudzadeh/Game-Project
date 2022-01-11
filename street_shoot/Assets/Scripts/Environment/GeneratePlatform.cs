@@ -5,7 +5,7 @@ using UnityEngine;
 public class GeneratePlatform : MonoBehaviour
 {
 	//public GameObject[] section;
-	public float zPos = 40f;
+	public float streetZ = 18;
 	private bool creatingSection = false;
 	public GameObject Street;
 
@@ -23,11 +23,11 @@ public class GeneratePlatform : MonoBehaviour
 	{
 		//secNum = Random.Range(0, 10);
 		//Instantiate(section[secNum], new Vector3(0, 0, zPos), Quaternion.identity);
-		Instantiate(Street, new Vector3(0, 0, zPos), Quaternion.identity);
+		Instantiate(Street, new Vector3(0, 0, streetZ), Quaternion.identity);
 
 
-		zPos += 40;
-		yield return new WaitForSeconds(3); //remember! adjust with ball speed
+		streetZ += 18;
+		yield return new WaitForSeconds(1f); //remember! adjust with ball speed
 		creatingSection = false;
 	}
 }
