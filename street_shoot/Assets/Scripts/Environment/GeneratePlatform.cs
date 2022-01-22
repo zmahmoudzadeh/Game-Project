@@ -20,7 +20,7 @@ public class GeneratePlatform : MonoBehaviour
 	private int randomX3;
 	private int randomCar;
 	private int randomCoin;
-	private int lineCount;
+	//	private int lineCount;
 
 
 	//	public GameObject Street;
@@ -43,7 +43,7 @@ public class GeneratePlatform : MonoBehaviour
 		randomX2 = Random.Range(0, 5);
 		randomX3 = Random.Range(0, 5);
 		
-		lineCount = Random.Range(1, 3);
+		//	lineCount = Random.Range(1, 3);
 
 		//if(lineCount == 1)
         //{
@@ -54,7 +54,7 @@ public class GeneratePlatform : MonoBehaviour
 
 		InstantiateRandomly(randomX1);
 
-		if (randomX1 != randomX2)
+		if (randomX2 != randomX1)
 		{
 			InstantiateRandomly(randomX2);
 		}
@@ -74,7 +74,7 @@ public class GeneratePlatform : MonoBehaviour
 		randomCombo = Random.Range(0, 100);
 		randomCar = Random.Range(0, 8);
 		randomCoin = Random.Range(0, 2);
-		lineCount = Random.Range(1, 3);
+		// lineCount = Random.Range(1, 3);
 		switch (randomX)
 		{
 			case 1:
@@ -96,7 +96,7 @@ public class GeneratePlatform : MonoBehaviour
 		}
 		else
 		{
-			if (randomCombo < 90)
+			if (randomCombo <= 90)
 			{
 				Instantiate(Car[randomCar], new Vector3(objectX, 0, streetZ), Quaternion.identity);
 			}
