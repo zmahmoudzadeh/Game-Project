@@ -8,9 +8,14 @@ public class GeneratePlatform : MonoBehaviour
 	public float streetZ = 18;
 	private bool creatingSection = false;
 	public GameObject Street;
+	public GameObject Wall1;
+	public GameObject Wall2;
+	public GameObject GuardRail1;
+	public GameObject GuardRail2;
 	public GameObject Star;
-	//	public GameObject Coin;
-	public GameObject[] HeartOrCoin;
+	public GameObject TrafficBarrier;
+	public GameObject Coin;
+	public GameObject Heart;
 	public GameObject[] Car;
 	private float[] lineX = { -10.5f, -3.5f, 3.5f, 10.5f };
 	private float objectX;
@@ -19,7 +24,7 @@ public class GeneratePlatform : MonoBehaviour
 	private int randomX2;
 	private int randomX3;
 	private int randomCar;
-	private int randomCoin;
+	//	private int randomCoin;
 	//	private int lineCount;
 
 
@@ -51,6 +56,10 @@ public class GeneratePlatform : MonoBehaviour
         //}
 		//Instantiate(section[secNum], new Vector3(0, 0, zPos), Quaternion.identity);
 		Instantiate(Street, new Vector3(0, 0, streetZ), Quaternion.identity);
+		Instantiate(Wall1, new Vector3(16.50f, 6, streetZ), Quaternion.identity);
+		Instantiate(Wall2, new Vector3(-16.80f, 6, streetZ), Quaternion.identity);
+		Instantiate(GuardRail1, new Vector3(15, 1, streetZ), Quaternion.identity);
+		Instantiate(GuardRail2, new Vector3(-15, 1, streetZ), Quaternion.identity);
 
 		InstantiateRandomly(randomX1);
 
@@ -73,7 +82,7 @@ public class GeneratePlatform : MonoBehaviour
     {
 		randomCombo = Random.Range(0, 100);
 		randomCar = Random.Range(0, 8);
-		randomCoin = Random.Range(0, 2);
+		// randomCoin = Random.Range(0, 2);
 		// lineCount = Random.Range(1, 3);
 		switch (randomX)
 		{
@@ -94,17 +103,28 @@ public class GeneratePlatform : MonoBehaviour
 		{
 			Instantiate(Star, new Vector3(objectX, 1.2f, streetZ), Quaternion.identity);
 		}
-		else
+		else if(randomCombo <= 90)
 		{
-			if (randomCombo <= 90)
-			{
-				Instantiate(Car[randomCar], new Vector3(objectX, 0, streetZ), Quaternion.identity);
+			if(objectX < 0)
+            {
+				Instantiate(Car[randomCar], new Vector3(objectX, 0, streetZ), Quaternion.Euler(new Vector3(0, 180, 0)));
 			}
-			else
-			{
-				Instantiate(HeartOrCoin[randomCoin], new Vector3(objectX, 1, streetZ), Quaternion.identity);
+            else
+            {
+				Instantiate(Car[randomCar], new Vector3(objectX, 0, streetZ), Quaternion.Euler(new Vector3(0, 0, 0)));
 			}
-
+		}
+		else if(randomCombo < 93)
+		{
+			Instantiate(TrafficBarrier, new Vector3(objectX, 0, streetZ), Quaternion.Euler(new Vector3(-90, 0, 0)));
+		}
+		else if(randomCombo < 97)
+        {
+			Instantiate(Coin, new Vector3(objectX, 1, streetZ), Quaternion.identity);
+		}
+		else
+        {
+			Instantiate(Heart, new Vector3(objectX, 1, streetZ), Quaternion.identity);
 		}
 	}
 }
