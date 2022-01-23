@@ -14,6 +14,7 @@ public class GeneratePlatform : MonoBehaviour
 	public GameObject GuardRail2;
 	public GameObject Star;
 	public GameObject TrafficBarrier;
+	public GameObject Pit;
 	public GameObject Coin;
 	public GameObject Heart;
 	public GameObject[] Car;
@@ -114,13 +115,17 @@ public class GeneratePlatform : MonoBehaviour
 				Instantiate(Car[randomCar], new Vector3(objectX, 0, streetZ), Quaternion.Euler(new Vector3(0, 0, 0)));
 			}
 		}
-		else if(randomCombo < 93)
+		else if(randomCombo <= 92)
 		{
 			Instantiate(TrafficBarrier, new Vector3(objectX, 0, streetZ), Quaternion.Euler(new Vector3(-90, 0, 0)));
 		}
-		else if(randomCombo < 97)
+		else if(randomCombo <= 95)
         {
 			Instantiate(Coin, new Vector3(objectX, 1, streetZ), Quaternion.identity);
+		}
+		else if (randomCombo <= 98)
+		{
+			Instantiate(Pit, new Vector3(objectX, 0.01f, streetZ), Quaternion.identity);
 		}
 		else
         {
