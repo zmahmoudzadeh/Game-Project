@@ -315,6 +315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SA_TrafficBarrier_01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ac88bfff72bd6a149bb608ce16b9daff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ac88bfff72bd6a149bb608ce16b9daff, type: 3}
       propertyPath: m_LocalPosition.x
       value: -173.3

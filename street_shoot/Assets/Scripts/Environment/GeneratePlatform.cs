@@ -31,7 +31,18 @@ public class GeneratePlatform : MonoBehaviour
 
 	//	public GameObject Street;
 	//	public GameObject Street;
-
+	void Start()
+	{
+		if (creatingSection == false)
+		{
+			creatingSection = true;
+			StartCoroutine(GenerateSection());
+			StartCoroutine(GenerateSection());
+			StartCoroutine(GenerateSection());
+			StartCoroutine(GenerateSection());
+			StartCoroutine(GenerateSection());
+		}
+	}
 	void Update()
 	{
 		if (creatingSection == false)
@@ -45,9 +56,9 @@ public class GeneratePlatform : MonoBehaviour
 	{
 		
 		
-		randomX1 = Random.Range(0, 5);
-		randomX2 = Random.Range(0, 5);
-		randomX3 = Random.Range(0, 5);
+		randomX1 = Random.Range(1, 5);
+		randomX2 = Random.Range(1, 5);
+		randomX3 = Random.Range(1, 5);
 		
 		//	lineCount = Random.Range(1, 3);
 
@@ -69,7 +80,7 @@ public class GeneratePlatform : MonoBehaviour
 			InstantiateRandomly(randomX2);
 		}
 
-		if (randomX3 != randomX1 & randomX3 != randomX2)
+		if ((randomX3 != randomX1) & (randomX3 != randomX2))
 		{
 			InstantiateRandomly(randomX3);
 		}

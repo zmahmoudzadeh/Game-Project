@@ -25,11 +25,21 @@ public class PlayerMove : MonoBehaviour
                 transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed * -1);
             }
         }
-		if (Input.GetKey(KeyCode.Space))
+		if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
 		{
-			this.transform.position += new Vector3(0, 10, 0);
+			transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+			transform.position = new Vector3(transform.position.x, 0.25f, transform.position.z);
 		}
-    }
+        else
+        {
+			transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+			transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
+		}
+		//	if (Input.GetKey(KeyCode.Space))
+		//	{
+		//		this.transform.position += new Vector3(0, 10, 0);
+		//	}
+	}
 
 	private void OnCollisionEnter(Collision collision)
 	{
@@ -53,7 +63,7 @@ public class PlayerMove : MonoBehaviour
 		//	Debug.Log("DEATH ZONE");
 		//	eventSystem.OnLooseCondition.Invoke();
 		//}
-
+		
 		//if (collision.gameObject.CompareTag(TagNames.CollectableItem.ToString()))
 		//{
 		//	collision.gameObject.SetActive(false);
