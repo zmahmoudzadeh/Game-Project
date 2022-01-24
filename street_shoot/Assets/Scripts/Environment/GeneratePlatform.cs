@@ -90,7 +90,7 @@ public class GeneratePlatform : MonoBehaviour
 		}
 
 		streetZ += 18;
-		yield return new WaitForSeconds(1f); //remember! adjust with ball speed
+		yield return new WaitForSeconds(0.5f); //remember! adjust with ball speed
 		creatingSection = false;
 	}
 
