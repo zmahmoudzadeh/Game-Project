@@ -40,7 +40,7 @@ public class LooseMenu : MonoBehaviour
 	public void MainMenu()
 	{
 		Debug.Log("clicked");
-		// game scene index is 1
+		// main menu scene index is 0
 		SceneManager.LoadScene(0);
 	}
 
