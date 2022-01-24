@@ -11,10 +11,9 @@ public class EventSystemCustom : MonoBehaviour
     public UnityEvent OnCoinDecrease;
     public UnityEvent OnStarIncrease;
     public UnityEvent OnStarDecrease;
+	public UnityEvent OnLooseCondition;
 
-
-
-    void Awake()
+	void Awake()
     {
         OnHeartIncrease = new UnityEvent();
         OnHeartDecrease = new UnityEvent();
@@ -22,6 +21,6 @@ public class EventSystemCustom : MonoBehaviour
         OnCoinDecrease = new UnityEvent();
         OnStarIncrease = new UnityEvent();
         OnStarDecrease = new UnityEvent();
-
+		OnLooseCondition = new UnityEvent();
     }
 }

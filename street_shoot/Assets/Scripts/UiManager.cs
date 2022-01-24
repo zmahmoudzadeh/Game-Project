@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class UiManager : MonoBehaviour
@@ -24,6 +25,7 @@ public class UiManager : MonoBehaviour
         eventSystem.OnCoinDecrease.AddListener(UpdateDecreaseCoinText);
         eventSystem.OnStarIncrease.AddListener(UpdateStarText);
         eventSystem.OnStarDecrease.AddListener(UpdateDecreaseStarText);
+        eventSystem.OnLooseCondition.AddListener(ShowLooseScene);
         //coin.text = "Coin: " + 0;
         //star.text = "Star: " + 0;
         //heart.text = "Heart: " + 0;
@@ -95,6 +97,12 @@ public class UiManager : MonoBehaviour
 	{
 		int previous = PlayerPrefs.GetInt("Coins", 0);
 		PlayerPrefs.SetInt("Coins", current + previous);		
+	}
+
+	public void ShowLooseScene()
+	{
+		// loose scene has index of 2
+		SceneManager.LoadScene(2);
 	}
 
 }
