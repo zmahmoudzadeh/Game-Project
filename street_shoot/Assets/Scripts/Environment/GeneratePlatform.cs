@@ -43,6 +43,9 @@ public class GeneratePlatform : MonoBehaviour
 			StartCoroutine(GenerateSection());
 		}
 	
+		Time.timeScale = 1f;
+		PauseMenu.GameIsPaused = false;
+
 		PlayerPrefs.SetInt("CurrentStars", 0);
 		PlayerPrefs.SetInt("CurrentCoins", 0);
 	}
