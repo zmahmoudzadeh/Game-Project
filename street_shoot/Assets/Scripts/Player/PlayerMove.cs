@@ -36,11 +36,11 @@ public class PlayerMove : MonoBehaviour
 			transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
 			transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
 		}
-		//	if (Input.GetKey(KeyCode.Space))
-		//	{
-		//		this.transform.position += new Vector3(0, 10, 0);
-		//	}
-	}
+		if (Input.GetKey(KeyCode.Space))
+		{
+            this.transform.position += new Vector3(0, 10, 0);
+        }
+    }
 
 	private void OnCollisionEnter(Collision collision)
 	{
