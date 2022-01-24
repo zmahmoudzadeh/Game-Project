@@ -106,10 +106,10 @@ public class GeneratePlatform : MonoBehaviour
 				objectX = -10.5f;
 				break;
 			case 2:
-				objectX = -3.5f;
+				objectX = -3.8f;
 				break;
 			case 3:
-				objectX = 3.5f;
+				objectX = 3.8f;
 				break;
 			case 4:
 				objectX = 10.5f;

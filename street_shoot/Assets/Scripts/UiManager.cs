@@ -85,6 +85,10 @@ public class UiManager : MonoBehaviour
         int heartValue = int.Parse(heart.text.Split(':')[1]) - 1;
         Debug.Log("UPDATE Heart");
         heart.text = "Heart: " + heartValue.ToString();
+        if(heartValue == 0)
+        {
+            ShowLooseScene();
+        }
     }
 
 	public void UpdateHighScore(int current)

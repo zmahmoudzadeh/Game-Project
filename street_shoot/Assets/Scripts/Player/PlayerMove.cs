@@ -40,38 +40,57 @@ public class PlayerMove : MonoBehaviour
 		{
             this.transform.position += new Vector3(0, 10, 0);
         }
+       
     }
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		//if (collision.gameObject.CompareTag(TagNames.StickyPlatform.ToString()))
-		//{
-		//	Debug.LogWarning("sticky");
-		//	canJump = false;
-		//}
+        
+            //if (collision.gameObject.CompareTag(TagNames.StickyPlatform.ToString()))
+            //{
+            //	Debug.LogWarning("sticky");
+            //	canJump = false;
+            //}
 
-		//if (collision.gameObject.CompareTag(TagNames.ExitDoor.ToString()))
-		//{
-		//	Debug.Log("exit door");
-		//}
-		Debug.Log("on collision");
+            //if (collision.gameObject.CompareTag(TagNames.ExitDoor.ToString()))
+            //{
+            //	Debug.Log("exit door");
+        //}
+        Debug.Log("on collision");
+        
 	}
 
 	private void OnTriggerEnter(Collider collision)
 	{
-		if (collision.gameObject.CompareTag("Vehicle"))
+		if (collision.gameObject.CompareTag("Pit"))
 		{
 			Debug.Log("DEATH ZONE");
 			eventSystem.OnLooseCondition.Invoke();
 		}
+        if (collision.gameObject.CompareTag("Vehicle") || collision.gameObject.CompareTag("Barrier"))
+        {
+            // decrease the player's heart
 
-		//if (collision.gameObject.CompareTag(TagNames.CollectableItem.ToString()))
-		//{
-		//	collision.gameObject.SetActive(false);
-		//	Debug.Log("POTION!");
-		//}
-		Debug.Log("on trigger");
+            Debug.Log("decrese HEART");
+            eventSystem.OnHeartDecrease.Invoke();
+            this.transform.position = new Vector3(0, transform.position.y, (transform.position.z - 2));
+            //yield return StartCoroutine(Wait(10.0f));
+        }
+
+        //if (collision.gameObject.CompareTag(TagNames.CollectableItem.ToString()))
+        //{
+        //	collision.gameObject.SetActive(false);
+        //	Debug.Log("POTION!");
+        //}
+        Debug.Log("on trigger");
 
 	}
+    //IEnumerator Wait(float waitTime)
+    //{
+    //    yield return new WaitForSeconds(waitTime);
+
+    //}
+
+
 }
 
