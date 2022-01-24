@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-	public GameObject ball;
+	GameObject ball;
 	float x;
 	float y;
 	//// Start is called before the first frame update
 	void Start()
 	{
+		ball = GameObject.FindGameObjectWithTag("Ball");
+
 		x = this.transform.position.x;
 		y = this.transform.position.y;
 	}

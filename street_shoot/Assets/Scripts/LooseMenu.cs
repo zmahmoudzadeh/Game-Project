@@ -10,14 +10,6 @@ public class LooseMenu : MonoBehaviour
 	public TextMeshProUGUI Coins;
 	public TextMeshProUGUI Stars;
 
-	//public void Update() // shouldn't be update
-	//{
-	//	int highScore = PlayerPrefs.GetInt("HighScore", 0);
-	//	HighScore.text = "High Score: " + highScore.ToString();
-
-	//	int coins = PlayerPrefs.GetInt("Coins", 0);
-	//	Coins.text = "Coins: " + coins.ToString();
-	//}
 	public void Start()
 	{
 		int highScore = PlayerPrefs.GetInt("HighScore", 0);
@@ -44,9 +36,4 @@ public class LooseMenu : MonoBehaviour
 		SceneManager.LoadScene(0);
 	}
 
-	//public void QuitGame()
-	//{
-	//	Debug.Log("quit clicked");
-	//	Application.Quit();
-	//}
 }

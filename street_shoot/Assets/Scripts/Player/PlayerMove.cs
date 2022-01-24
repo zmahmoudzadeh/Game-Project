@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float moveSpeed = 3;
+	public BallConfig config;
+
+	public float moveSpeed = 3;
     public float leftRightSpeed = 4;
-	public EventSystemCustom eventSystem;
+	EventSystemCustom eventSystem;
+
+	void Start()
+	{
+		eventSystem = GameObject.Find("EventSystemGameplay").GetComponent<EventSystemCustom>();
+	}
 
 	void Update()
     {
