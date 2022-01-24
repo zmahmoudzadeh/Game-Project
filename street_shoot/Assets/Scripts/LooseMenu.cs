@@ -6,9 +6,9 @@ using TMPro;
 
 public class LooseMenu : MonoBehaviour
 {
-	//public TextMeshProUGUI HighScore;
-	//public TextMeshProUGUI Coins;
-	//public TextMeshProUGUI Stars;
+	public TextMeshProUGUI HighScore;
+	public TextMeshProUGUI Coins;
+	public TextMeshProUGUI Stars;
 
 	//public void Update() // shouldn't be update
 	//{
@@ -18,6 +18,17 @@ public class LooseMenu : MonoBehaviour
 	//	int coins = PlayerPrefs.GetInt("Coins", 0);
 	//	Coins.text = "Coins: " + coins.ToString();
 	//}
+	public void Start()
+	{
+		int highScore = PlayerPrefs.GetInt("HighScore", 0);
+		HighScore.text = "High Score: " + highScore.ToString();
+
+		int star = PlayerPrefs.GetInt("CurrentStars", 0);
+		Stars.text = "Stars: " + star.ToString();
+
+		int coin = PlayerPrefs.GetInt("CurrentCoins", 0);
+		Coins.text = "Coins: " + coin.ToString();
+	}
 
 	public void RestartGame()
 	{

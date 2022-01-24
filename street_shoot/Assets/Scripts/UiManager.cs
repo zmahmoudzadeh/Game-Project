@@ -42,8 +42,9 @@ public class UiManager : MonoBehaviour
     public void UpdateCoinText()
     {
         int coinValue = int.Parse(coin.text.Split(':')[1]) + 1;
-		UpdateTotalCoins(coinValue);
-        Debug.Log("UPDATE Coin");
+		UpdateTotalCoins(coinValue); // in order to show in main menu
+		UpdateCurrentCoins(coinValue); // in order to show in gameOver menu
+		Debug.Log("UPDATE Coin");
         coin.text = "Coin: " + coinValue.ToString();
     }
 
@@ -53,7 +54,8 @@ public class UiManager : MonoBehaviour
         int starValue = int.Parse(star.text.Split(':')[1]) + 1;
         Debug.Log("UPDATE Star");
 		UpdateHighScore(starValue); // call it on game loose? or in the middle of the game. 
-        star.text = "Star: " + starValue.ToString();
+		UpdateCurrentStars(starValue); // in order to show in gameOver menu
+		star.text = "Star: " + starValue.ToString();
     }
 
     public void UpdateHeartText()
@@ -97,6 +99,16 @@ public class UiManager : MonoBehaviour
 	{
 		int previous = PlayerPrefs.GetInt("Coins", 0);
 		PlayerPrefs.SetInt("Coins", current + previous);		
+	}
+
+	public void UpdateCurrentCoins(int current)
+	{
+		PlayerPrefs.SetInt("CurrentCoins", current);
+	}
+
+	public void UpdateCurrentStars(int current)
+	{
+		PlayerPrefs.SetInt("CurrentStars", current);
 	}
 
 	public void ShowLooseScene()

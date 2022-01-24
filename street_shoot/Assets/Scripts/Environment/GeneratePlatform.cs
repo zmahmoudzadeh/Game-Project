@@ -31,6 +31,11 @@ public class GeneratePlatform : MonoBehaviour
 
 	//	public GameObject Street;
 	//	public GameObject Street;
+	void Start()
+	{
+		PlayerPrefs.SetInt("CurrentStars", 0);
+		PlayerPrefs.SetInt("CurrentCoins", 0);
+	}
 
 	void Update()
 	{
