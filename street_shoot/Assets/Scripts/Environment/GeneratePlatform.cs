@@ -42,7 +42,11 @@ public class GeneratePlatform : MonoBehaviour
 			StartCoroutine(GenerateSection());
 			StartCoroutine(GenerateSection());
 		}
+	
+		PlayerPrefs.SetInt("CurrentStars", 0);
+		PlayerPrefs.SetInt("CurrentCoins", 0);
 	}
+
 	void Update()
 	{
 		if (creatingSection == false)

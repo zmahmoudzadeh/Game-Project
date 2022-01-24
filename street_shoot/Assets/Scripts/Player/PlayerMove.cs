@@ -6,8 +6,9 @@ public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed = 3;
     public float leftRightSpeed = 4;
+	public EventSystemCustom eventSystem;
 
-    void Update()
+	void Update()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
 
@@ -53,23 +54,23 @@ public class PlayerMove : MonoBehaviour
 		//{
 		//	Debug.Log("exit door");
 		//}
-		Debug.Log("exit door");
+		Debug.Log("on collision");
 	}
 
 	private void OnTriggerEnter(Collider collision)
 	{
-		//if (collision.gameObject.CompareTag(TagNames.DeathZone.ToString()))
-		//{
-		//	Debug.Log("DEATH ZONE");
-		//	eventSystem.OnLooseCondition.Invoke();
-		//}
-		
+		if (collision.gameObject.CompareTag("Vehicle"))
+		{
+			Debug.Log("DEATH ZONE");
+			eventSystem.OnLooseCondition.Invoke();
+		}
+
 		//if (collision.gameObject.CompareTag(TagNames.CollectableItem.ToString()))
 		//{
 		//	collision.gameObject.SetActive(false);
 		//	Debug.Log("POTION!");
 		//}
-		Debug.Log("exit door");
+		Debug.Log("on trigger");
 
 	}
 }

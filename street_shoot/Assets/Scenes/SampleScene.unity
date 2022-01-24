@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -254,7 +254,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -487.6, y: 181.9}
+  m_AnchoredPosition: {x: -29, y: 90}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &18398809
@@ -656,6 +656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1646981259178978, guid: 1eb894c97da32c940a90228cac9bea1c, type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
     - target: {fileID: 4870167790249810, guid: 1eb894c97da32c940a90228cac9bea1c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -187.65001
@@ -951,7 +955,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110098814}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.88354844, y: 0.59896165, z: 2.2185822}
@@ -1152,6 +1156,10 @@ PrefabInstance:
     - target: {fileID: 1646981259178978, guid: 7500aebe3382441458c34a315bb6842b, type: 3}
       propertyPath: m_Name
       value: 'Police_car '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646981259178978, guid: 7500aebe3382441458c34a315bb6842b, type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 4870167790249810, guid: 7500aebe3382441458c34a315bb6842b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1355,6 +1363,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Taxi
       objectReference: {fileID: 0}
+    - target: {fileID: 1646981259178978, guid: 6f993fa0f8fc9f045888054c717741b4, type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
     - target: {fileID: 4870167790249810, guid: 6f993fa0f8fc9f045888054c717741b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -178.05
@@ -1479,6 +1491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   leftRightSpeed: 10
+  eventSystem: {fileID: 703247027}
 --- !u!135 &356483272
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2410,7 +2423,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501436388}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.88354844, y: 0.59896165, z: 2.0809093}
@@ -2813,6 +2826,10 @@ PrefabInstance:
     - target: {fileID: 1959030373088092, guid: 6717c7c2d677a9f439f502029ec5b22a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959030373088092, guid: 6717c7c2d677a9f439f502029ec5b22a, type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 4353972167979376, guid: 6717c7c2d677a9f439f502029ec5b22a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3527,6 +3544,9 @@ MonoBehaviour:
   OnStarDecrease:
     m_PersistentCalls:
       m_Calls: []
+  OnLooseCondition:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &703247028
 Transform:
   m_ObjectHideFlags: 0
@@ -4157,7 +4177,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817117369}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.88354844, y: 0.6193846, z: 2.234081}
@@ -4851,6 +4871,10 @@ PrefabInstance:
     - target: {fileID: 1646981259178978, guid: 388d83314c9e51c40956fb6908979eee, type: 3}
       propertyPath: m_Name
       value: Car_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646981259178978, guid: 388d83314c9e51c40956fb6908979eee, type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 4870167790249810, guid: 388d83314c9e51c40956fb6908979eee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6377,7 +6401,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019845741}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.1702536, y: 1.0353994, z: 3.793836}
@@ -6808,6 +6832,10 @@ PrefabInstance:
     - target: {fileID: 1959030373088092, guid: d3a9898e22901924b98de4fff69bf9e6, type: 3}
       propertyPath: m_Name
       value: Bus_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959030373088092, guid: d3a9898e22901924b98de4fff69bf9e6, type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 4353972167979376, guid: d3a9898e22901924b98de4fff69bf9e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7774,6 +7802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   leftRightSpeed: 4
+  eventSystem: {fileID: 0}
 --- !u!1001 &1300614619
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8423,6 +8452,10 @@ PrefabInstance:
     - target: {fileID: 1646981259178978, guid: 558e73634b44f39458a7ea4a8a56976a, type: 3}
       propertyPath: m_Name
       value: Car_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646981259178978, guid: 558e73634b44f39458a7ea4a8a56976a, type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 4870167790249810, guid: 558e73634b44f39458a7ea4a8a56976a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9252,7 +9285,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531066317}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.88354844, y: 0.6338665, z: 2.348548}
@@ -10689,7 +10722,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767176790}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.1702536, y: 1.0353994, z: 3.793836}
@@ -10882,7 +10915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -487.6, y: 217.9}
+  m_AnchoredPosition: {x: -29, y: 126}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1790866879
@@ -10937,7 +10970,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808748100}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.83786213, y: 0.59896165, z: 2.3660893}
@@ -11608,6 +11641,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car_3
       objectReference: {fileID: 0}
+    - target: {fileID: 1646981259178978, guid: 6d56b50e711a5204d9059e0c99b70eda, type: 3}
+      propertyPath: m_TagString
+      value: Vehicle
+      objectReference: {fileID: 0}
     - target: {fileID: 4870167790249810, guid: 6d56b50e711a5204d9059e0c99b70eda, type: 3}
       propertyPath: m_LocalPosition.x
       value: -172.65001
@@ -11700,7 +11737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -487.6, y: 146.9}
+  m_AnchoredPosition: {x: -29, y: 55}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1944549419
@@ -11951,7 +11988,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989397761}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.88354844, y: 0.59896165, z: 2.348548}
