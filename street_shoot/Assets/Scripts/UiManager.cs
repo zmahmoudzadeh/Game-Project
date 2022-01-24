@@ -49,6 +49,7 @@ public class UiManager : MonoBehaviour
     {
         int starValue = int.Parse(star.text.Split(':')[1]) + 1;
         Debug.Log("UPDATE Star");
+		UpdateHighScore(starValue); // call it on game loose? or in the middle of the game. 
         star.text = "Star: " + starValue.ToString();
     }
 
@@ -80,5 +81,13 @@ public class UiManager : MonoBehaviour
         Debug.Log("UPDATE Heart");
         heart.text = "Heart: " + heartValue.ToString();
     }
+
+	public void UpdateHighScore(int current)
+	{
+		if (current > PlayerPrefs.GetInt("HighScore", 0))
+		{
+			PlayerPrefs.SetInt("HighScore", current);
+		}
+	}
 
 }
