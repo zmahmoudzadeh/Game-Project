@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BasketballConfig
   m_EditorClassIdentifier: 
   ballName: Basketball
-  value: 0
+  value: 30

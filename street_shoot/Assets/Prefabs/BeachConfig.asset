@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BeachConfig
   m_EditorClassIdentifier: 
   ballName: Beachball
-  value: 0
+  value: 20
