@@ -40,6 +40,7 @@ public class UiManager : MonoBehaviour
     public void UpdateCoinText()
     {
         int coinValue = int.Parse(coin.text.Split(':')[1]) + 1;
+		UpdateTotalCoins(coinValue);
         Debug.Log("UPDATE Coin");
         coin.text = "Coin: " + coinValue.ToString();
     }
@@ -88,6 +89,12 @@ public class UiManager : MonoBehaviour
 		{
 			PlayerPrefs.SetInt("HighScore", current);
 		}
+	}
+
+	public void UpdateTotalCoins(int current)
+	{
+		int previous = PlayerPrefs.GetInt("Coins", 0);
+		PlayerPrefs.SetInt("Coins", current + previous);		
 	}
 
 }
